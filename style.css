@@ -1,0 +1,198 @@
+* {
+    box-sizing: border-box;
+    user-select: none;
+    font-family: 'Courier New', monospace;
+}
+
+body {
+    background: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+}
+
+.game-container {
+    background: #c0c0c0;
+    padding: 20px;
+    text-align: center;
+    border: 3px solid #808080;
+    box-shadow: 5px 5px 15px rgba(0,0,0,0.5);
+}
+
+h1 {
+    color: black;
+    margin: 0 0 20px 0;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.game-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    background: #b0b0b0;
+    padding: 10px;
+    border: 2px solid #808080;
+}
+
+.mine-counter, .timer {
+    font-size: 24px;
+    font-weight: bold;
+    color: red;
+    background: black;
+    padding: 5px 10px;
+    border: 2px solid #808080;
+    font-family: 'Courier New', monospace;
+}
+
+.reset-button {
+    background: #c0c0c0;
+    color: black;
+    border: 2px solid #808080;
+    padding: 8px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    font-weight: bold;
+    font-family: 'Courier New', monospace;
+}
+
+.reset-button:hover {
+    background: #d0d0d0;
+}
+
+.reset-button:active {
+    background: #a0a0a0;
+}
+
+.difficulty-selector {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+}
+
+.difficulty-btn {
+    background: #c0c0c0;
+    border: 2px solid #808080;
+    padding: 8px 15px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    font-family: 'Courier New', monospace;
+}
+
+.difficulty-btn.active {
+    background: #808080;
+    color: white;
+}
+
+.difficulty-btn:hover {
+    background: #d0d0d0;
+}
+
+.game-board {
+    display: inline-grid;
+    gap: 1px;
+    background: #808080;
+    padding: 2px;
+    border: 2px solid #808080;
+    margin-bottom: 20px;
+}
+
+.cell {
+    width: 30px;
+    height: 30px;
+    background: #c0c0c0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+    border: 2px solid;
+    border-color: #ffffff #808080 #808080 #ffffff;
+    font-family: 'Courier New', monospace;
+}
+
+.cell:hover:not(.revealed) {
+    background: #d0d0d0;
+}
+
+.cell.revealed {
+    border: 1px solid #808080;
+    background: #e0e0e0;
+    cursor: default;
+}
+
+.cell.flagged::before {
+    content: "F";
+    font-size: 18px;
+    font-weight: bold;
+    color: red;
+}
+
+.cell.mine.revealed::before {
+    content: "M";
+    font-size: 18px;
+    font-weight: bold;
+    color: black;
+}
+
+.cell.mine.revealed {
+    background: #ff4444;
+}
+
+.cell.revealed[data-number="1"] {
+    color: #0206f2 !important;
+}
+
+.cell.revealed[data-number="2"] {
+    color: #097f22 !important;
+}
+
+.cell.revealed[data-number="3"] {
+    color: #f2051e !important;
+}
+
+.cell.revealed[data-number="4"] {
+    color: #020872 !important;
+}
+
+.cell.revealed[data-number="5"] {
+    color: #880000 !important;
+}
+
+.cell.revealed[data-number="6"] {
+    color: #008785 !important;
+}
+
+.cell.revealed[data-number="7"] {
+    color: #000000 !important;
+}
+
+.cell.revealed[data-number="8"] {
+    color: #4f0070 !important;
+}
+
+.game-status {
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 10px;
+    padding: 10px;
+    border: 2px solid #808080;
+    background: #c0c0c0;
+}
+
+.game-status.win {
+    background: #c0c0c0;
+    color: black;
+}
+
+.game-status.lose {
+    background: #c0c0c0;
+    color: black;
+}
