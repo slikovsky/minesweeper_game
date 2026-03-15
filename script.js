@@ -287,7 +287,7 @@ class Minesweeper {
         if (this.board[row][col] === -1) {
             this.gameOver = true;
             this.stopTimer();
-            this.gameStatusElement.textContent = 'ПОРАЖЕНИЕ';
+            this.gameStatusElement.textContent = 'ПОРАЖЕНИЕ(';
             this.gameStatusElement.classList.add('lose');
             this.revealAllMines();
             this.renderBoard();
