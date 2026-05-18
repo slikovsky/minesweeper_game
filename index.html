@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,27 +8,24 @@
     <link rel="icon" href="Minesweeper-logo.png">
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <div class="game-container">
         <h1>САПЁР</h1>
-        
         <div class="difficulty-selector">
             <button class="difficulty-btn active" data-difficulty="easy">Легкий</button>
             <button class="difficulty-btn" data-difficulty="medium">Средний</button>
             <button class="difficulty-btn" data-difficulty="hard">Сложный</button>
         </div>
-
         <div class="game-header">
             <div class="mine-counter" id="mineCounter">010</div>
             <button class="reset-button" id="resetButton">Новая игра</button>
             <div class="timer" id="timer">000</div>
         </div>
-
         <div class="game-board" id="gameBoard"></div>
-        
         <div class="game-status" id="gameStatus"></div>
     </div>
-
     <script src="script.js"></script>
 </body>
+
 </html>
